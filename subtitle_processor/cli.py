@@ -43,6 +43,8 @@ def main():
                         help='跳过过短条目处理')
     parser.add_argument('--verbose', '-v', action='store_true',
                         help='显示详细处理信息')
+    parser.add_argument('--no-export-desktop', action='store_true',
+                        help='不导出 SRT 到桌面')
     parser.add_argument('--asr-fixes', type=str,
                         help='额外 ASR 修正 JSON 文件路径'
                         '（格式: {"错误文本": "正确文本"}）')
@@ -68,6 +70,7 @@ def main():
         merge_flag=merge_flag,
         asr_extra_fixes=extra_fixes,
         verbose=args.verbose,
+        export_desktop=not args.no_export_desktop,
     )
 
     print(json.dumps(stats, ensure_ascii=False, indent=2))

@@ -405,6 +405,25 @@ def merge_sentences(blocks, max_chars=MAX_CHARS, max_time_ms=MAX_TIME_MS):
 # 6. 字幕加工主流程
 # ============================================================
 
+def export_to_desktop(content, filename, verbose=False):
+    """
+    将清理后的字幕导出为 .srt 文件到桌面。
+
+    参数:
+        content: SRT 格式字符串
+        filename: 原始文件名 (如 '智谱1.3.md')
+    """
+    import shutil
+    desktop_dir = os.path.expanduser('~/Desktop')
+    srt_name = os.path.splitext(os.path.basename(filename))[0] + '.srt'
+    desktop_path = os.path.join(desktop_dir, srt_name)
+    with open(desktop_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+    if verbose:
+        print(f"   🖥️  SRT 已导出到桌面: {desktop_path}")
+    return desktop_path
+
+
 def process_file(
     filepath,
     output_path=None,
@@ -413,7 +432,8 @@ def process_file(
     fix_short_flag=True,
     merge_flag=False,
     asr_extra_fixes=None,
-    verbose=False
+    verbose=False,
+    export_desktop=True
 ):
     """
     执行完整的字幕加工流水线。
@@ -489,6 +509,10 @@ def process_file(
     output = fmt_srt(blocks)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(output)
+
+    # 导出到桌面 (除非明确跳过)
+    if export_desktop:
+        export_to_desktop(output, filepath, verbose)
 
     if verbose:
         red = int((1 - stats['after'] / stats['before']) * 100) if stats['before'] > 0 else 0

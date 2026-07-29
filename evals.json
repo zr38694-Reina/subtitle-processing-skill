@@ -1,0 +1,33 @@
+{
+  "skill_name": "subtitle-processing",
+  "evals": [
+    {
+      "id": 1,
+      "name": "basic-filler-clean",
+      "prompt": "帮我处理 Attachments/课程1.2.md 这个字幕文件，把语气词清理掉。这是课程录音的转写字幕，有大量啊、那、这个、呢、吧等口头禅。只清理语气词，不要合并句子。",
+      "expected_output": "字幕文件中的语气词（啊、那、这个、呢、吧、哦等）被清理，保留原始 951 条结构和时间轴",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "full-pipeline-with-asr",
+      "prompt": "帮我处理 Attachments/课程2.1.md 字幕文件。这是关于RAG技术的课程，很多地方把大语言模型听成了大圆模型，还有一些VB coding应该改成Vibe Coding。帮我清理语气词、修正ASR错误、合并过短条目。另外我还有个额外的ASR修正：'向量数据苦'应该改成'向量数据库'。",
+      "expected_output": "字幕文件经过完整清理：语气词删除、ASR错误修正（含用户提供的额外修正）、过短条目合并",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "full-pipeline-with-summary",
+      "prompt": "帮我把 Attachments/课程3.4.md 字幕文件处理一下。这是'多Agent协作与Skill组合编排'这节课的字幕。先完整的做语气词清理、ASR错误修正和断句合并，然后根据清理后的字幕生成一份课程概要文档，放在课程大纲汇总/目录下，分小节输出。",
+      "expected_output": "1. 清理后的字幕文件\n2. 课程概要文档（分小节，包含标题和内容）",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "fix-asr-only",
+      "prompt": "我发现 Attachments/课程4.2.md 这个字幕文件有很多ASR错误，比如把MCP听成了MCT，把Function Calling听成了Funtion Coring。帮我修正这些错误，其他什么都不做。",
+      "expected_output": "字幕文件中特定ASR错误被修正，语气词和格式保持不变",
+      "files": []
+    }
+  ]
+}

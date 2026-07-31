@@ -123,6 +123,7 @@ subtitle-process --help
 | tray / trae / tree | TRAE | 字节跳动 AI 编程工具（Trae），ASR 听写/拼写错误，统一全大写 `TRAE` |
 | 空大 / 框大 | conda | Python 环境管理工具，中文发音"conda"听似"空大" |
 | Grady translate / grady translate | greedy translate | 贪心解码/贪心翻译（greedy translate），ASR 拼写误写 |
+| job（dropout/训练语境） | drop | dropout 的 ASR 误写（"把 job 里边的参数"→"把 drop 里边的参数"）；**仅在 Transformer 训练/推理语境修正**，勿误伤 job description（JD 岗位描述）等正常用法 |
 
 **智谱课程实测修正（可直接复用）：**
 - **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。

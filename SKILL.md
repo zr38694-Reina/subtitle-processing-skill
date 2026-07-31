@@ -120,6 +120,12 @@ subtitle-process --help
 | VB coding / v v b coding | Vibe Coding | AI 编程范式术语 |
 | 向量数据苦 | 向量数据库 | 常见于 RAG 课程 |
 | MCT 协议 | MCP 协议 | 模型上下文协议 |
+| tray / trae / tree | TRAE | 字节跳动 AI 编程工具（Trae），ASR 听写/拼写错误，统一全大写 `TRAE` |
+| 空大 / 框大 | conda | Python 环境管理工具，中文发音"conda"听似"空大" |
+
+**智谱课程实测修正（可直接复用）：**
+- **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。
+- **conda**：`空大` / `框大` 均为 Python 环境管理工具 conda 的误写，统一改为 `conda`（如"空大环境"→"conda环境"、"空大DL"→"condaDL"）。
 
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`

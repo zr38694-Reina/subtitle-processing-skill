@@ -53,6 +53,8 @@ ASR_REGEX_FIXES = [
     (re.compile(r'(?i)vb\s*coding'), 'Vibe Coding'),
     (re.compile(r'(?i)v\s*v\s*b\s*coding'), 'Vibe Coding'),
     (r'v\s*b\s*coding', 'Vibe Coding'),
+    # 智谱课程实测：greedy translate 的 ASR 拼写误写（Grady/grady）
+    (re.compile(r'(?i)grady\s*translate'), 'greedy translate'),
 ]
 
 

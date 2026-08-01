@@ -47,6 +47,16 @@ ASR_FIXES = {
     'tray': 'TRAE',
     'trae': 'TRAE',
     # 注意：VB→Vibe 在下面的正则中处理
+    # AI 编程课程实测（Karpathy / Vibe Coding 三层模型相关 ASR 误写）
+    'capathy': 'Karpathy',
+    'Kapathy': 'Karpathy',
+    'authentic engineering': 'agentic engineering',
+    'rap coding': 'vibe coding',
+    "honey's engineering": 'harness engineering',
+    # 中文 ASR 误写
+    '角手器': '脚手架',
+    # AI 编程工具名误写
+    'codebody': 'CodeBuddy',
 }
 
 ASR_REGEX_FIXES = [
@@ -129,6 +139,12 @@ def clean_fillers(text):
 
     # 2.1 纯口头禅 (独立出现)
     t = re.sub(r'[嗯呃诶哎噢哦哈](?=[，。！？；：、\s]|$)', '', t)
+
+    # 2.1b 句首/标点后的独立语气词（后接汉字也删，如"嗯优秀的作业"→"优秀的作业"）
+    t = re.sub(r'^[嗯呃诶哎噢哦]+', '', t)
+    t = re.sub(r'([，。！？；：、])\s*[嗯呃诶哎噢哦]+', r'\1', t)
+    # 句中"嗯"夹在两汉字之间（嗯不作构词语素，删除安全）
+    t = re.sub(r'(?<=[一-鿿])嗯(?=[一-鿿])', '', t)
 
     # 2.2 啊 (全部删除)
     t = re.sub(r'\s*啊([，。！？；：、])', r'\1', t)

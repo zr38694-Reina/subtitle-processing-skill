@@ -110,6 +110,8 @@ subtitle-process --help
 | **那** | 句首填充词全部删除 | "那我们开始" → "我们开始" |
 | **呢/吧/哦/嗯/呃** | 全部为语气词，删除 | — |
 
+> **注意**：句首或标点后的 `嗯/呃/哦/诶` 即使后接汉字（如"嗯优秀的作业"）也应删除；`哈` 除外（保留"哈喽"）。脚本 2.1b 规则已覆盖。
+
 ### 2.2 ASR 错误检查
 
 中文技术课程常见的 ASR 错误模式：
@@ -124,10 +126,22 @@ subtitle-process --help
 | 空大 / 框大 | conda | Python 环境管理工具，中文发音"conda"听似"空大" |
 | Grady translate / grady translate | greedy translate | 贪心解码/贪心翻译（greedy translate），ASR 拼写误写 |
 | job（dropout/训练语境） | drop | dropout 的 ASR 误写（"把 job 里边的参数"→"把 drop 里边的参数"）；**仅在 Transformer 训练/推理语境修正**，勿误伤 job description（JD 岗位描述）等正常用法 |
+| Web coding / webcording | Vibe Coding | Karpathy 2025 年提出的 AI 编程范式，ASR 听似"Web coding"；**仅在 AI 编程/Vibe Coding 语境修正**，避免误伤"Web 开发"类课程 |
+| capathy / Kapathy | Karpathy | OpenAI 创始成员、提出 Vibe Coding 的 Andrej Karpathy 的 ASR 误写 |
+| authentic engineering | agentic engineering | Karpathy 提出的 AI 编程第二层概念（做对），ASR 误写 |
+| rap coding | vibe coding | Karpathy 三层模型第一层（先做出来），ASR 误写 |
+| honey's engineering | harness engineering | 给模型加"马鞍脚手架"的 harness 工程，ASR 误写 |
+| 角手器 | 脚手架 | "脚手架"的中文 ASR 误写（harness 语境） |
+| 柯泽 | Cursor | 口语"Cursor"音译误写（IDE 语境） |
+| codebody | CodeBuddy | 腾讯 AI 编程工具 CodeBuddy，ASR 拼写误写 |
 
 **智谱课程实测修正（可直接复用）：**
 - **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。
 - **conda**：`空大` / `框大` 均为 Python 环境管理工具 conda 的误写，统一改为 `conda`（如"空大环境"→"conda环境"、"空大DL"→"condaDL"）。
+
+**AI 产品经理共创营课程实测修正（可直接复用）：**
+- **Vibe Coding**：`Web coding` / `webcording` 均为 Vibe Coding 的 ASR 误写（如"Web coding和直接让ChatGPT写代码是一回事吗"）。**仅在 AI 编程课程语境下修正**，避免误伤真正的"Web 开发"课程。
+- **人名归一**：同一主讲人常出现多个称呼变体（如 傲游 / 欧优 / 欧阳 / 欧欧 / 奥威 / 瑶瑶 / 欧老师 / 林老师），需按课程统一为真实称呼（本课统一为"林老师"）。注意多词组合（如"傲游老师"）可能被断句隔开，需同时处理独立词片段（如"傲游"→"林"）。
 
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`

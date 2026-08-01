@@ -57,6 +57,7 @@ ASR_FIXES = {
     '角手器': '脚手架',
     # AI 编程工具名误写
     'codebody': 'WorkBuddy',
+    'workbody': 'WorkBuddy',
 }
 
 ASR_REGEX_FIXES = [

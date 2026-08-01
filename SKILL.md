@@ -133,7 +133,7 @@ subtitle-process --help
 | honey's engineering | harness engineering | 给模型加"马鞍脚手架"的 harness 工程，ASR 误写 |
 | 角手器 | 脚手架 | "脚手架"的中文 ASR 误写（harness 语境） |
 | 柯泽 | Cursor | 口语"Cursor"音译误写（IDE 语境） |
-| codebody | WorkBuddy | AI 编程/工作工具 WorkBuddy，ASR 拼写误写（勿误为 CodeBuddy） |
+| codebody / workbody / work body | WorkBuddy | AI 编程/工作工具 WorkBuddy，ASR 拼写误写（勿误为 CodeBuddy）；`work body` 仅在 AI 工具名语境修正，避免误伤"工作主体"等正常用法 |
 
 **智谱课程实测修正（可直接复用）：**
 - **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。

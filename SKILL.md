@@ -143,6 +143,16 @@ subtitle-process --help
 - **Vibe Coding**：`Web coding` / `webcording` 均为 Vibe Coding 的 ASR 误写（如"Web coding和直接让ChatGPT写代码是一回事吗"）。**仅在 AI 编程课程语境下修正**，避免误伤真正的"Web 开发"课程。
 - **人名归一**：同一主讲人常出现多个称呼变体（如 傲游 / 欧优 / 欧阳 / 欧欧 / 奥威 / 瑶瑶 / 欧老师 / 林老师），需按课程统一为真实称呼（本课统一为"林老师"）。注意多词组合（如"傲游老师"）可能被断句隔开，需同时处理独立词片段（如"傲游"→"林"）。
 
+**Day2 课程实测修正（AI 狼人杀 / HTML 原型课，可直接复用）：**
+- **Codex**（OpenAI AI agent 工具名）：ASR/拼写误写极多，统一为全大写 `Codex`——`callx` / `callbacks` / `callouts` / `collect`(含 `collection`) / `collex` / `Colex` / `Codec` / `codec`。**仅在本课程（讲 Codex 实操）语境修正**；注意 `collection` 要先于 `collect` 替换，避免拼成 `Codexion`。
+- **Next.js**：`next点js` / `next点JS` / `next点Js`（中文"点"=英文句点）统一为 `Next.js`。
+- **Suno**：`速诺` / `素诺` 均为 AI 音乐生成工具 Suno 的中文音译误写。
+- **GPT Image 2**：`GPT IMAGE2` / `GPT2` 均为 OpenAI 图像生成模型的误写（在生图语境）。
+- **OpenRouter**：`open Router` 为 AI 模型聚合平台 OpenRouter 的误写。
+- **Selector**：`Slater` 为浏览器元素选择器小工具 Selector 的音译误写。
+- **SVG**：`s SVG` → `SVG`（"用s SVG的方式"→"用SVG的方式"）。
+- **DuMate**：`do Mate` → `DuMate`（国产 AI agent 工具名）。
+
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`
 2. 运行 `subtitle-process 字幕.md --asr-fixes fixes.json -v`

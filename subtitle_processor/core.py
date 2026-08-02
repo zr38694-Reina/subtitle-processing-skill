@@ -319,6 +319,9 @@ def fix_short_entries(blocks):
 
     # 删除标记的条目
     blocks[:] = [b for b in blocks if b['text'] != '__DELETE__']
+    # 重编号，保证 SRT 编号连续（删除/合并后 idx 会出现空号）
+    for idx, b in enumerate(blocks, 1):
+        b['idx'] = idx
     return blocks
 
 

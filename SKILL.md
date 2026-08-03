@@ -134,6 +134,9 @@ subtitle-process --help
 | 角手器 | 脚手架 | "脚手架"的中文 ASR 误写（harness 语境） |
 | 柯泽 | Cursor | 口语"Cursor"音译误写（IDE 语境） |
 | codebody / workbody / work body | WorkBuddy | AI 编程/工作工具 WorkBuddy，ASR 拼写误写（勿误为 CodeBuddy）；`work body` 仅在 AI 工具名语境修正，避免误伤"工作主体"等正常用法 |
+| TOKEN dance | TokenDance | 国内 AI 模型聚合 API 平台（词元跳动，观猹/Watcha 出品），ASR 听写误写 |
+| Deepseek | DeepSeek | AI 模型厂商品牌 DeepSeek，大小写归一 |
+| vessel（部署语境） | Vercel | AI 应用部署平台 Vercel 的 ASR 误写（部署/上线语境）；`vscode` / `resell` / `Resso` 同为此误写，仅在部署语境修正 |
 
 **智谱课程实测修正（可直接复用）：**
 - **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。
@@ -152,6 +155,14 @@ subtitle-process --help
 - **Selector**：`Slater` 为浏览器元素选择器小工具 Selector 的音译误写。
 - **SVG**：`s SVG` → `SVG`（"用s SVG的方式"→"用SVG的方式"）。
 - **DuMate**：`do Mate` → `DuMate`（国产 AI agent 工具名）。
+
+**Day3 课程实测修正（AI 产品实践 / 接入 API + 部署上线课，可直接复用）：**
+- **Vercel**（部署平台）：ASR 误写极多——`vessel` / `resell` / `Resso` / `vscode`（部署语境）统一为 `Vercel`。**仅在部署/上线语境修正**，勿误伤 VS Code 编辑器等正常用法。
+- **Werewolf**（AI 狼人杀项目名）：`wolfcha` / `wolfchat` / `warroof` 统一为 `Werewolf`（项目/域名语境，如"warroof.com"→"Werewolf.com"）。
+- **TokenDance**：`TOKEN dance` → `TokenDance`（国内 AI 模型聚合平台，见 2.2 表）。
+- **NexAI**：`奈氏` → `NexAI`（共创营品牌名，如"奈氏AI产品经理的共创营"→"NexAI AI 产品经理共创营"）。
+- **DeepSeek**：`Deepseek` → `DeepSeek`（品牌大小写归一）。
+- **人名/演示名归一**：直播对话中的示例用户名（如 Codex 演示里"我叫 Alloy"）常被 ASR 写成 `好友` / `OIO` / `欧呦` / `欧友`，需统一为正确拼写 `Alloy`。
 
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`

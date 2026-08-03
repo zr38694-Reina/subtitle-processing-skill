@@ -58,6 +58,10 @@ ASR_FIXES = {
     # AI 编程工具名误写
     'codebody': 'WorkBuddy',
     'workbody': 'WorkBuddy',
+    # AI 产品实践课程实测（Day3 字幕清洗新增）
+    'TOKEN dance': 'TokenDance',   # 国内 AI 模型聚合平台（词元跳动）
+    'Deepseek': 'DeepSeek',        # 模型厂商品牌大小写归一
+    'vessel': 'Vercel',            # 部署平台 Vercel 的 ASR 误写（部署语境；vscode/resell 见 SKILL.md 语境说明）
 }
 
 ASR_REGEX_FIXES = [

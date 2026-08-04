@@ -62,6 +62,11 @@ ASR_FIXES = {
     'TOKEN dance': 'TokenDance',   # 国内 AI 模型聚合平台（词元跳动）
     'Deepseek': 'DeepSeek',        # 模型厂商品牌大小写归一
     'vessel': 'Vercel',            # 部署平台 Vercel 的 ASR 误写（部署语境；vscode/resell 见 SKILL.md 语境说明）
+    # 品牌名归一：奈势AI（中文品牌名）——"奈氏"为 ASR 误写；"NexAI"为英文拼写，字幕语境统一为中文品牌名
+    # 注意：商务/官方文档"NexAI 奈势"联合署名时保留英文 NexAI，勿全局替换
+    '奈氏AI': '奈势AI',
+    '奈氏': '奈势AI',
+    'NexAI': '奈势AI',
 }
 
 ASR_REGEX_FIXES = [

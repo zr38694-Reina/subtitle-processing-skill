@@ -160,7 +160,7 @@ subtitle-process --help
 - **Vercel**（部署平台）：ASR 误写极多——`vessel` / `resell` / `Resso` / `vscode`（部署语境）统一为 `Vercel`。**仅在部署/上线语境修正**，勿误伤 VS Code 编辑器等正常用法。
 - **Werewolf**（AI 狼人杀项目名）：`wolfcha` / `wolfchat` / `warroof` 统一为 `Werewolf`（项目/域名语境，如"warroof.com"→"Werewolf.com"）。
 - **TokenDance**：`TOKEN dance` → `TokenDance`（国内 AI 模型聚合平台，见 2.2 表）。
-- **NexAI**：`奈氏` → `NexAI`（共创营品牌名，如"奈氏AI产品经理的共创营"→"NexAI AI 产品经理共创营"）。
+- **奈势AI**（中文品牌名）：`奈氏` / `奈氏AI` → `奈势AI`（ASR 误写，如"是奈氏AI的共创者"→"是奈势AI的共创者"）；`NexAI` 为英文品牌拼写，字幕语境统一为中文品牌名 `奈势AI`（如"是NexAI的共创者"→"是奈势AI的共创者"）。**注意**：官方/商务文档常用"NexAI 奈势"联合署名，此时保留英文 `NexAI`，勿在商务语境全局替换。
 - **DeepSeek**：`Deepseek` → `DeepSeek`（品牌大小写归一）。
 - **人名/演示名归一**：直播对话中的示例用户名（如 Codex 演示里"我叫 Alloy"）常被 ASR 写成 `好友` / `OIO` / `欧呦` / `欧友`，需统一为正确拼写 `Alloy`。
 

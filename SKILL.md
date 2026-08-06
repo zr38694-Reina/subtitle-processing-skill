@@ -179,6 +179,17 @@ subtitle-process --help
 - **救猫咪（Save the Cat）**：`兽必死救猫咪` → `救猫咪`（"兽必死"为英文书名 Save the Cat 的音译误写）。仅本课修正。
 - **节拍名语境修正（仅本课）**：`调目切入点`→`第二幕衔接点`（15 Beats 第 6 拍）；`黄昏黑夜`→`灵魂黑夜`（第 12 拍，同课 1.2 人物湖光式误写）；`催化剂激励受谏`→`催化剂激励事件`（激励事件 = inciting incident）；`是剧写的`→`一无所有`（第 11 拍，AI 节拍清单快速朗读误写）；`重视画面`→`终场画面`（第 15 拍）；`游戏时间终点`→`游戏时间、中点`（第 8、9 拍连读）。均按 15 拍顺序推断，仅在节拍清单语境修正。
 
+**AI影视短片导演课（大鹏 AIGC 课程）1.5 海报产品图与主视觉的生成 实测修正（可直接复用）：**
+- **GPT Image 2**：`image two` / `image to` 均为 GPT Image 2 模型的 ASR 误写（如"image two和Nano Banana Pro"→"Image 2和Nano Banana Pro"、"GPT image to锁定"→"GPT Image 2锁定"）。`image two` / `GPT image to` / `GPT的image to` 已加入默认映射；**注意**"image to image（图生图）"等正常英文短语避免误伤。
+- **管口**：`光口` → `管口`（护肤品/化妆品管身开口，如"光口挤出一大坨"→"管口挤出一大坨"）。已加入默认映射。
+- **skill 拼写误写**：`SKLL` / 分开书写的 `S K I L l` 均为 skill 的拼写误写（如"文生图SKLL杠2"→"文生图SKILL杠2"）。已加入默认映射；`skil` 因是 `skill` 的子串**不要单独加入映射**（会把正确词变 `skilll`），需用短语或上下文处理。
+- **TVC（电视广告）**：`TV c` → `TVC`（如"你是一个TV c光影指导"→"你是一个TVC光影指导"）。已加入默认映射。
+- **模型名大小写归一**：`GPT4O` → `GPT-4o`（旧模型引用，如"针对于GPT4O"→"针对于GPT-4o"）。已加入默认映射。
+- **品牌名归一**：`ichange` → `iChange`（本课护肤品品牌 iChange）。已加入默认映射。
+- **Markdown 简写展开**：`MD格式` → `Markdown格式`（如"设计的MD格式"→"设计的Markdown格式"）。已加入默认映射；`design MD` / `设计MD` → `design Markdown` / `设计Markdown` 仅本课 fixes.json 修正。
+- **仅本课 fixes.json 修正**：`SQL` → `skill`（AI 创作/skill 制作语境，如"在我的SQL中加入视觉方案"→"在我的skill中加入视觉方案"）；`使用我上传的skil` → `使用我上传的skill`（`skil` 为 `skill` 子串，用完整短语替换）。**勿**将 `SQL` 加入默认映射，避免误伤 SQL 数据库。
+- **遗留未改**：平台名 `Livetv`（本课生图平台，无法确认正确名称）；`维生素CQ` / `维生素t`（上节课 skill 名/提示词的 ASR 严重误写，无法可靠还原）——如后续确认再补。
+
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`
 2. 运行 `subtitle-process 字幕.md --asr-fixes fixes.json -v`

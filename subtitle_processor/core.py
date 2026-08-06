@@ -91,6 +91,24 @@ ASR_FIXES = {
     '10五Beats': '15 Beats',
     '15B4': '15 Beats',
     '15B子': '15 Beats',
+    # AI影视短片导演课实测（大鹏 AIGC 课程 1.5 字幕清洗新增）
+    # GPT Image 2 模型名的 ASR 误写（image two / image to → Image 2）
+    'image two': 'Image 2',
+    'GPT image to': 'GPT Image 2',
+    'GPT的image to': 'GPT的Image 2',
+    # 护肤品/化妆品语境：管口的 ASR 误写（"光口挤出一大坨"→"管口挤出一大坨"）
+    '光口': '管口',
+    # skill 的拼写误写（SKLL / 分开书写的 S K I L l）
+    'SKLL': 'SKILL',
+    'S K I L l': 'SKILL',
+    # TVC（电视广告）的 ASR 误写（"你是一个TV c光影指导"→"TVC"）
+    'TV c': 'TVC',
+    # 模型名大小写归一
+    'GPT4O': 'GPT-4o',
+    # 品牌名归一：iChange（本课护肤品品牌）
+    'ichange': 'iChange',
+    # Markdown 的 MD 简写展开（延续"马上格式"→"Markdown格式"）
+    'MD格式': 'Markdown格式',
 }
 
 ASR_REGEX_FIXES = [

@@ -86,6 +86,11 @@ ASR_FIXES = {
     '点MD': '.md',
     '点my': '.md',
     '点zip': '.zip',
+    # AI影视短片导演课实测（大鹏 AIGC 课程 1.3 字幕清洗新增）
+    # 15 Beats（救猫咪）节拍法的 ASR 误写
+    '10五Beats': '15 Beats',
+    '15B4': '15 Beats',
+    '15B子': '15 Beats',
 }
 
 ASR_REGEX_FIXES = [

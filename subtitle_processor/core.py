@@ -101,6 +101,9 @@ ASR_FIXES = {
     # skill 的拼写误写（SKLL / 分开书写的 S K I L l）
     'SKLL': 'SKILL',
     'S K I L l': 'SKILL',
+    # SKILL.md 文件名大小写归一（scale.md 为 skill.md 的 ASR 误写）
+    'scale.md': 'SKILL.md',
+    'skill.md': 'SKILL.md',
     # TVC（电视广告）的 ASR 误写（"你是一个TV c光影指导"→"TVC"）
     'TV c': 'TVC',
     # 模型名大小写归一

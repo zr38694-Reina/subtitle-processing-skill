@@ -202,6 +202,13 @@ subtitle-process --help
 - **仅本课 fixes.json 修正**：`SQL` → `skill`（AI 创作/skill 制作语境，如"在我的SQL中加入视觉方案"→"在我的skill中加入视觉方案"）；`使用我上传的skil` → `使用我上传的skill`（`skil` 为 `skill` 子串，用完整短语替换）。**勿**将 `SQL` 加入默认映射，避免误伤 SQL 数据库。
 - **遗留未改**：平台名 `Livetv`（本课生图平台，无法确认正确名称）；`维生素CQ` / `维生素t`（上节课 skill 名/提示词的 ASR 严重误写，无法可靠还原）——如后续确认再补。
 
+**Skill微PBL 1.1（小q老师 · Skill 是什么）实测修正（可直接复用）：**
+- **skill 系列误写（延续 1.5 规则）**：`scale` / `scale.md` / `SQL` / `skil` 均为 skill 的 ASR 误写（如"为什么还要scale"→"为什么还要skill"、"叫scale.md的文件"→"叫SKILL.md的文件"、"从完全不懂SQL"→"从完全不懂skill"、"支持skil"→"支持skill"）。**仅在本课/AI 创作语境修正**；`SQL` 勿全局替换（会误伤数据库课程），`skil` 需用正则 `skil(?![a-zA-Z])` 处理，避免把正确的 `skill` 改成 `skilll`。
+- **SKILL.md 文件名大小写归一**：`skill.md` / `scale.md` → `SKILL.md`（标准文件名全大写）。已加入默认映射（`skill.md`、`scale.md` 两条），安全。
+- **tough reply（本课示例 skill 名）**：`tuf reply` / `top reply` / `Tough reply` 统一为 `tough reply`。**仅本课 fixes.json 修正**，`top reply` 在英文社媒语境有正常含义，勿加入默认映射。
+- **书脊（书籍比喻）**：`书籍` → `书脊`（本课用"图书馆书脊"比喻 skill 的 description 常驻，如"只看书籍"→"只看书脊"、"书籍上那一行描述"→"书脊上那一行描述"）。**仅本课 fixes.json 修正**，`书籍` 是正常中文词，勿全局替换。
+- **产品名大小写归一（非 ASR，属规范）**：`Claude code` → `Claude Code`、`claude` → `Claude`、`Openai` → `OpenAI`、`cursor` → `Cursor`、`GitHub copilot` → `GitHub Copilot`、`PPT word Excel PDF` → `PPT、Word、Excel、PDF`、`u盘` → `U盘`。
+
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`
 2. 运行 `subtitle-process 字幕.md --asr-fixes fixes.json -v`

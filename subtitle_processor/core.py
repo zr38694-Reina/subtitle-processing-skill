@@ -83,6 +83,9 @@ ASR_FIXES = {
     '违违反': '违反',
     '这然后': '然后',
     # 中文口语"点X"表示文件扩展名（点MD → .md）
+    # skill点MD 必须先于 点MD 替换，否则会先变成 skill.md 而漏掉大写归一
+    'skill点MD': 'SKILL.md',
+    '点html': '.html',
     '点MD': '.md',
     '点my': '.md',
     '点zip': '.zip',
@@ -112,9 +115,20 @@ ASR_FIXES = {
     'ichange': 'iChange',
     # Markdown 的 MD 简写展开（延续"马上格式"→"Markdown格式"）
     'MD格式': 'Markdown格式',
+    # Skill微PBL 1.2 实测新增（安全映射）
+    # 产品名大小写归一（Claude code 精确短语，不影响 Claude Code）
+    'Claude code': 'Claude Code',
+    'Openai': 'OpenAI',
+    # 官方 skill 名（均为精确短语，避免误伤普通英文）
+    'skill Creator': 'skill-creator',
+    'skill creator': 'skill-creator',
+    # Windows 路径盘符大写
+    'c盘的users': 'C盘的users',
 }
 
 ASR_REGEX_FIXES = [
+    # skill 的 ASR 拼写误写（skil→skill）；负向前瞻避免把正确的 skill 改成 skilll
+    (re.compile(r'skil(?![a-zA-Z])'), 'skill'),
     (re.compile(r'(?i)vb\s*coding'), 'Vibe Coding'),
     (re.compile(r'(?i)v\s*v\s*b\s*coding'), 'Vibe Coding'),
     (r'v\s*b\s*coding', 'Vibe Coding'),

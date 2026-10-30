@@ -149,6 +149,18 @@ subtitle-process --help
 | TOKEN dance | TokenDance | 国内 AI 模型聚合 API 平台（词元跳动，观猹/Watcha 出品），ASR 听写误写 |
 | Deepseek | DeepSeek | AI 模型厂商品牌 DeepSeek，大小写归一 |
 | vessel（部署语境） | Vercel | AI 应用部署平台 Vercel 的 ASR 误写（部署/上线语境）；`vscode` / `resell` / `Resso` 同为此误写，仅在部署语境修正 |
+| 点MD / 点html | .md / .html | 中文"点"=英文句点，用于文件扩展名（如"存成海报点html"→"存成海报.html"） |
+| skill点MD | SKILL.md | 标准文件名全大写；需先于 `点MD` 替换 |
+| skill Creator / skill creator | skill-creator | Anthropic 官方做 skill 的 skill，目录名用连字符 |
+| brand guidance | brand-guidelines | Anthropic 官方品牌规范 skill 名 |
+| skil（不在 skill 内） | skill | ASR 拼写误写；用正则 `skil(?![a-zA-Z])`，避免把正确词改成 `skilll` |
+| scale / scales / SQL（AI 创作语境） | skill / skills | skill 的 ASR 误写；**仅课程上下文修正**，勿误伤 SQL 数据库、scale 规模化等正常用法 |
+| meeting Notes | meeting-notes | skill 文件夹名须英文小写+短横线 |
+| Mac用平方 | Mac用苹方 | 字体 PingFang（苹方）的 ASR 误写 |
+| 书籍（skill/书脊比喻） | 书脊 | 仅 AI skill 课程语境；`书籍` 是正常中文词，勿全局替换 |
+| 上一级的安全提醒 | 上一集的安全提醒 | "集"被听成"级" |
+| Openai | OpenAI | 品牌大小写归一 |
+| Claude code / claude | Claude Code / Claude | 产品名大小写归一 |
 
 **智谱课程实测修正（可直接复用）：**
 - **TRAE**：`tray` / `trae` / `tree` 均为 AI 编程工具 Trae 的误写，统一改为全大写 `TRAE`。注意 `tree` 仅在 AI 编程工具语境下修正（如"cursor ... tree"），避免误伤"决策树"等正常词汇。
@@ -208,6 +220,16 @@ subtitle-process --help
 - **tough reply（本课示例 skill 名）**：`tuf reply` / `top reply` / `Tough reply` 统一为 `tough reply`。**仅本课 fixes.json 修正**，`top reply` 在英文社媒语境有正常含义，勿加入默认映射。
 - **书脊（书籍比喻）**：`书籍` → `书脊`（本课用"图书馆书脊"比喻 skill 的 description 常驻，如"只看书籍"→"只看书脊"、"书籍上那一行描述"→"书脊上那一行描述"）。**仅本课 fixes.json 修正**，`书籍` 是正常中文词，勿全局替换。
 - **产品名大小写归一（非 ASR，属规范）**：`Claude code` → `Claude Code`、`claude` → `Claude`、`Openai` → `OpenAI`、`cursor` → `Cursor`、`GitHub copilot` → `GitHub Copilot`、`PPT word Excel PDF` → `PPT、Word、Excel、PDF`、`u盘` → `U盘`。
+
+**Skill微PBL 1.2（小q老师 · 三种方法做出第一个 Skill）实测修正（可直接复用）：**
+- **skill 系列误写（延续 1.1 / 1.5 规则）**：`scale` / `scales` / `SQL` / `skil` / `skilled` 均为 skill 的 ASR 误写（如"以及scale不起作用"→"以及skill不起作用"、"第二点cloud里面的scales"→"第二个是点Claude里面的skills"、"做SQL最常遇到的情况"→"做skill最常遇到的情况"、"没有skilled格式"→"没有skill格式"）。**仅在本课/AI 创作语境修正**；`SQL`、`scale`、`scales` 勿全局替换；`skilled` 是正常英文词，勿加入默认映射；`skil` 用正则 `skil(?![a-zA-Z])`（已加入默认正则）。
+- **路径与文件夹名**：`点cloud` → `点Claude`（`.claude` 的 ASR 误写）；`第一外层` → `第一个是外层`、`第二点cloud` → `第二个是点Claude`、`第三项目` → `第三个是项目`。仅本课修正。
+- **示例 skill 名（小写+短横线）**：`meeting notes` / `meeting Notes` → `meeting-notes`；`小q brand` → `xiaoq-brand`（name 必须与文件夹名一致）。`meeting notes` 仅本课修正；`xiaoq-brand` 系按课程"英文小写+短横线"规则还原，如确认官方写法再调整。
+- **官方 skill 名**：`skill Creator` / `skill creator` → `skill-creator`；`brand guidance` → `brand-guidelines`。已加入默认映射（均为精确短语，避免误伤普通英文）；`brand guidance` 仅本课修正。
+- **产品名大小写归一（非 ASR，属规范）**：`Claude code` → `Claude Code`、`claude` → `Claude`、`Openai` → `OpenAI`。其中 `Claude code` / `Openai` 已加入默认映射；`claude` 小写可能出现在命令行，勿全局替换。
+- **文件扩展名**：`点html` → `.html`、`点MD` → `.md`、`skill点MD` → `SKILL.md`。均已加入默认映射（`skill点MD` 需先于 `点MD` 替换）。
+- **术语 / 错别字（仅本课）**：`Mac用平方` → `Mac用苹方`（字体 PingFang）；`书籍` → `书脊`（书脊比喻）；`上一级的安全提醒` → `上一集的安全提醒`；`第2步` → `第二步`；`reload skills` → `reload-skills`（斜杠命令，按无空格惯例还原）；`PDF word PPT Excel` → `PDF、Word、PPT、Excel`。
+- **过短条目注意**：`回车`、`标题` 这类动作/小标题单独成条时，脚本会误并入上一条；修正时应还原为独立条目（`回车`可补足为"按回车"），不要与上句粘连。
 
 **做法：** 逐段阅读发现错误后：
 1. 创建课程专用的 `fixes.json`

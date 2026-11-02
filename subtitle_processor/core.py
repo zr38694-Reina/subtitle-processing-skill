@@ -124,6 +124,8 @@ ASR_FIXES = {
     'skill creator': 'skill-creator',
     # Windows 路径盘符大写
     'c盘的users': 'C盘的users',
+    # 字体 PingFang（苹方）的 ASR 误写（"Mac用平方"→"Mac用苹方"）
+    'Mac用平方': 'Mac用苹方',
 }
 
 ASR_REGEX_FIXES = [
